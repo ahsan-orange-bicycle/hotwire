@@ -1,0 +1,7 @@
+<div id="post_<%= post.id %>">
+  <h2><%= post.title %></h2>
+  <p><%= post.body %></p>
+  <% if controller_name == 'posts' && action_name == 'index' %>
+    <%= button_to "Show Post", post_path(post), method: :get, remote: true, data: { turbo_frame: "posts-list" } %>
+  <% end %>
+</div>

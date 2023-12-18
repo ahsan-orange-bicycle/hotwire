@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+
+<div>
+   <%= button_to "Edit", edit_post_path(@post), method: :get,
+    data: { accept: :turbo_stream, turbo_frame: "posts-list" }
+  %>
+
+ <%= button_to "Delete Post", @post, method: :delete,
+    data: {accept: :turbo_stream}
+  %>
+
+  <%= link_to "Back to posts", posts_path %>
+</div>
